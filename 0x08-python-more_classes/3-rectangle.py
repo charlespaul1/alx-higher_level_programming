@@ -49,6 +49,9 @@ class Rectangle:
             return 0
     def __str__(self):
         """returniing represenation of the rectangle with # hashes"""
-        if not self.width or not self.height:
-            return ""
-            return (('#' * self.width) + '\n' * self.height)[:-1]
+        if self.__width > 0 and self.__height > 0:
+            return ("\n".join(["".join(["#"
+                               for y in range(self.__width)])
+                               for x in range(self.__height)]))
+        else:
+            return ("")
