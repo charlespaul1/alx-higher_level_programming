@@ -6,7 +6,7 @@ class Rectangle:
     """Rectangle class"""
 
     number_of_instances = 0
-    
+
     def __init__(self, width=0, height=0):
         """Init method"""
         self.width = width
@@ -39,28 +39,28 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
         self.__height = value
+
     def area(self):
-        """calculating area of the rectangle"""
-        return self.__width * self.__height
+        """Area of a rectangle"""
+        return self.__height * self.__width
 
     def perimeter(self):
-        """perimeter of the rectangle"""
-        if self.__width > 0 and self.__height > 0:
-            return 2 * (self.__width + self.__height)
-        else:
+        """Perimeter of a rectangle"""
+        if 0 in (self.__height, self.__width):
             return 0
+        return 2 * (self.__height + self.__width)
+
     def __str__(self):
-        """returniing representation of the rectangle with # hashes"""
-        if self.__width > 0 and self.__height > 0:
-            return ("\n".join(["".join(["#"
-                               for y in range(self.__width)])
-                               for x in range(self.__height)]))
-        else:
-            return ("")
+        '''Returns string representation.'''
+        if not self.width or not self.height:
+            return ""
+        return (("#" * self.width + "\n") * self.height)[:-1]
+
     def __repr__(self):
-        """returning formal string representation """
-        return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
+        '''Returns formal string representation...'''
+        return "Rectangle(" + str(self.width) + ", " + str(self.height) + ")"
+
     def __del__(self):
-        """called at instance of deletion"""
+        '''Called at instance deletion.'''
         print("Bye rectangle...")
         type(self).number_of_instances -= 1
