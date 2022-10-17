@@ -5,6 +5,8 @@
 class Rectangle:
     """Rectangle class"""
 
+    number_of_instances -= 1
+
     def __init__(self, width=0, height=0):
         """Init method"""
         self.width = width
@@ -60,5 +62,5 @@ class Rectangle:
         return ("Rectangle({:d}, {:d})".format(self.__width, self.__height))
     def __del__(self):
         """called at instance of deletion"""
+        Rectangle.number_of_instances -= 1
         print("Bye rectangle...")
-        type(self).number_of_instances -= 1
