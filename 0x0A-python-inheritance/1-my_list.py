@@ -1,11 +1,9 @@
 #!/usr/bin/python3
-""" a simple MyList class"""
-
+"""simple my list class"""
 
 class MyList(list):
-    """a simple class that inherits from list"""
-
+    """simple class MyList, it inherits from list"""
     def print_sorted(self):
         """prints a sorted list"""
 
-        print(sorted(self))
+        return(sorted(self))
