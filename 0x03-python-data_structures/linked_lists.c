@@ -70,5 +70,6 @@ void free_listint(listint_t *head)
         current = head;
         head = head->next;
         free(current);
+ 
     }
 }
