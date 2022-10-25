@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
-""" function that writes a string to a text file (UTF8)"""
+""" function that writes a string to a text file """
 
 
 def write_file(filename="", text=""):
-    with open(filename, mode="w") as fd:
-        nbc = fd.write(text)
-    return nbc
+    """function to write to a file"""
+
+    with open(filename, encoding="utf-8", mode="w") as f:
+        return f.write(text)
