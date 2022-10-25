@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+
+"""this module has one function"""
+
+
 def read_file(filename=""):
     """
     Reads the content of a file
