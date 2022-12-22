@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-list all cities from the db 
+list all cities from the db
 """
 
 import MySQLdb
